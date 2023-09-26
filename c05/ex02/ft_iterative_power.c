@@ -29,7 +29,7 @@ int	ft_iterative_power(int nb, int power)
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	printf("%i", ft_iterative_power(3, 4 ));
 }

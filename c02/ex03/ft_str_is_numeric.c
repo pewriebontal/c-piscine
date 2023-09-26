@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 //#include <stdio.h>
 
 int	ft_str_is_numeric(char *str)
@@ -36,10 +37,10 @@ int	ft_str_is_numeric(char *str)
 int	main(void)
 {
 	int	i;
-	char * str;
 
+	char * str;
 //	str = "1232";
-	str = "Hello1";	
+	str = "Hello1";
 	i = ft_str_is_numeric(str);
 	printf("%d", i);
 	return (0);

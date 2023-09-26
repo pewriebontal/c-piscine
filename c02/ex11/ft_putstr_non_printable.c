@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdbool.h>
+#include <stdbool.h>
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {

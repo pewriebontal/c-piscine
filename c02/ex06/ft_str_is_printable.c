@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 //#include <stdio.h>
 
 int	ft_str_is_printable(char *str)
@@ -36,11 +37,11 @@ int	ft_str_is_printable(char *str)
 int	main(void)
 {
 	int	i;
-	char * str;
 
+	char * str;
 //	str = "~(*&^#%@(2";
 //	str = "Hello1";
-//	str = "hello";	
+//	str = "hello";
 	str = "HELLO";
 	i = ft_str_is_printable(str);
 	printf("%d", i);

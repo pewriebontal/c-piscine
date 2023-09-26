@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
 void	ft_sort_int_tab(int *tab, int size)
 {
@@ -20,7 +20,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	int	temp;
 
 	i = 0;
-	while (i < size -1)
+	while (i < size - 1)
 	{
 		j = 0;
 		while (j < size - i - 1)

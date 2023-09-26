@@ -26,7 +26,8 @@ int	ft_strlen(char *str)
 /*
 int	main(void)
 {
-	int 	r;
+	int	r;
+
 	r = ft_strlen("You Are Awesome");
 	printf("%d", r);
 }

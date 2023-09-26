@@ -28,15 +28,14 @@ char	*ft_strcpy(char *dest, char *src)
 /*
 int	main(void)
 {
-	// Test 1: 
+	// Test 1:
 	char dest1[20] = "Hello World!";
 	char src1[20] = "";
 	ft_strcpy(dest1, src1);
 	write(1, "\nTest1, Src: ", 14);
 	write(1, "\nDest: ", 8);
 	write(1, &dest1, sizeof(dest1));
-
-	// Test 2: 
+	// Test 2:
 	char dest2[20] = "Hey 42, Yo!";
 	char src2[20] = "Hello 42, Yo!";
 	ft_strcpy(dest2, src2);

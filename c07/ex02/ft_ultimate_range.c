@@ -42,11 +42,11 @@ int	ft_ultimate_range(int **range, int min, int max)
 /*
 int	main(void)
 {
-	//Test not working!
 	int	*rg;
+
+	//Test not working!
 	rg = ft_range(1, 9);
-	
 	ft_putintptr(rg);
-	return 0;
+	return (0);
 }
 */

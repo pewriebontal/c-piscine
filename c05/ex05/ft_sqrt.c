@@ -27,7 +27,7 @@ int	ft_sqrt(int nb)
 /*
 #include <stdio.h>
 
-int main()
+int	main(void)
 {
 	printf("%d\n", ft_sqrt(4));
 }

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
 char	*ft_strcapitalize(char *str)
 {
@@ -32,7 +32,7 @@ char	*ft_strcapitalize(char *str)
 			cap = 1;
 		else
 			cap = 0;
-		i ++;
+		i++;
 	}
 	return (str);
 }

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 //#include <stdio.h>
 
 char	*ft_strlowcase(char *str)
@@ -31,11 +32,10 @@ char	*ft_strlowcase(char *str)
 /*
 int	main(void)
 {
-    char str[] = "Hello, World!";
-    printf("Before conversion: %s\n", str);
-    ft_strlowcase(str);
-    printf("After conversion: %s\n", str);
-
-    return 0;
+	char str[] = "Hello, World!";
+	printf("Before conversion: %s\n", str);
+	ft_strlowcase(str);
+	printf("After conversion: %s\n", str);
+	return (0);
 }
 */

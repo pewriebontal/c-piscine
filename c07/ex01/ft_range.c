@@ -41,9 +41,9 @@ int	*ft_range(int min, int max)
 int	main(void)
 {
 	int	*rg;
+
 	rg = ft_range(1, 9);
-	
 	ft_putintptr(rg);
-	return 0;
+	return (0);
 }
 */

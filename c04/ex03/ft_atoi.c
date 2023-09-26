@@ -19,8 +19,7 @@ int	ft_atoi(char *str)
 	result = 0;
 	sign = 1;
 	count = 0;
-	while (*str == '\t' || *str == '\n'
-		|| *str == '\v' || *str == '\f'
+	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
 		|| *str == '\r' || *str == ' ')
 		++str;
 	while (*str == '-' || *str == '+')
@@ -41,8 +40,10 @@ int	ft_atoi(char *str)
 /*
 int	main(void)
 {
-	char *str = "-+++++-+-4277a9";
-	int	i;
+	char	*str;
+	int		i;
+
+	str = "-+++++-+-4277a9";
 	i = ft_atoi(str);
 	printf("%d", i);
 }

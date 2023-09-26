@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 //#include <stdio.h>
 
 int	ft_str_is_lowercase(char *str)
@@ -36,11 +37,11 @@ int	ft_str_is_lowercase(char *str)
 int	main(void)
 {
 	int	i;
-	char * str;
 
+	char * str;
 //	str = "1232";
 	str = "Hello1";
-//	str = "hello";	
+//	str = "hello";
 	i = ft_str_is_lowercase(str);
 	printf("%d", i);
 	return (0);

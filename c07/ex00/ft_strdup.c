@@ -45,8 +45,7 @@ int	main(void)
 
 	hel = "Yo Man";
 	str = ft_strdup(hel);
-	
 	ft_putstr(str);
-	return 0;
+	return (0);
 }
 */

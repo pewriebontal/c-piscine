@@ -25,7 +25,7 @@ int	ft_recursive_power(int nb, int power)
 /*
 #include <stdio.h>
 
-int main()
+int	main(void)
 {
 	printf("%d\n", ft_recursive_power(5,3));
 }

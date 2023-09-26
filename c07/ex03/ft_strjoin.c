@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int	ft_strlen(char *str)
 {
@@ -54,7 +54,7 @@ int	return_length(int size, char **strs, int sep_len)
 		{
 			len += sep_len;
 		}
-		i ++;
+		i++;
 	}
 	return (len);
 }
@@ -80,7 +80,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		result = ft_strcpy(result, strs[i]);
 		if (i + 1 < size)
 			result = ft_strcpy(result, sep);
-		i ++;
+		i++;
 	}
 	*result = '\0';
 	return (result - len);
