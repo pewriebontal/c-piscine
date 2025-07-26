@@ -6,6 +6,11 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:40:52 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/26 10:40:52 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/07/26 11:48:10 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
+
+void	rush(int x, int y)
+{}
