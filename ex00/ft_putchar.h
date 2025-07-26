@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush04.c                                           :+:      :+:    :+:   */
+/*   ft_putchar.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 10:40:54 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/26 12:52:12 by zchoo            ###   ########.fr       */
+/*   Created: 2025/07/26 12:42:07 by zchoo             #+#    #+#             */
+/*   Updated: 2025/07/26 12:42:10 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_putchar.h>
+#ifndef FT_PUTCHAR_H
+# define FT_PUTCHAR_H
 
-void	ft_putchar(char c);
+int	ft_putchar(char c);
 
-void	rush(int x, int y)
-{
-	ft_putchar('#');
-}
+#endif
