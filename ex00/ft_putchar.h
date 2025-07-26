@@ -6,13 +6,13 @@
 /*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 12:42:07 by zchoo             #+#    #+#             */
-/*   Updated: 2025/07/26 12:42:10 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/07/26 13:16:03 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUTCHAR_H
 # define FT_PUTCHAR_H
 
-int	ft_putchar(char c);
+void	ft_putchar(char c);
 
 #endif

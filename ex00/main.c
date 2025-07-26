@@ -3,17 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:41:17 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/26 11:46:43 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/07/26 14:09:39 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
+#include "rush04.h"
 
 int	main(void)
 {
-	rush(5, 5);
+	rush(5, 3);
+	rush(5, 1);
+	rush(1, 1);
+	rush(1, 5);
+	rush(4, 4);
 	return (0);
 }

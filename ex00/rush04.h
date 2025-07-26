@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   rush04.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 10:39:43 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/26 13:08:08 by zchoo            ###   ########.fr       */
+/*   Created: 2025/07/26 13:01:12 by zchoo             #+#    #+#             */
+/*   Updated: 2025/07/26 13:14:43 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_putchar.h"
+#ifndef RUSH04_H
+# define RUSH04_H
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	rush(int x, int y);
+
+#endif
