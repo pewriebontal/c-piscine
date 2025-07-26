@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:41:17 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/26 14:09:39 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/07/26 15:18:25 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush04.h"
+void	rush(int x, int y);
 
 int	main(void)
 {

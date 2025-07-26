@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 10:40:54 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/26 14:23:50 by zchoo            ###   ########.fr       */
+/*   Created: 2025/07/26 10:40:54 by zchoo             #+#    #+#             */
+/*   Updated: 2025/07/26 15:21:47 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putchar.h"
-#include "rush04.h"
+void	ft_putchar(char c);
 
 int	is_wall(int x, int y, int x_max, int y_max)
 {
