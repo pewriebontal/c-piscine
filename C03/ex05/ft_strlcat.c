@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:04:57 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/30 14:08:57 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/30 14:20:07 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	str_len(char *str)
+unsigned int	ft_strlen(char *str)
 {
 	unsigned int	count;
 
@@ -29,8 +29,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int	dest_len;
 	unsigned int	total_len;
 
-	src_len = str_len(src);
-	dest_len = str_len(dest);
+	src_len = ft_strlen(src);
+	dest_len = ft_strlen(dest);
 	total_len = dest_len + src_len;
 	if (size <= dest_len)
 		return (src_len + size);

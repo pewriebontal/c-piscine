@@ -5,28 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:04:41 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/30 14:08:08 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/30 14:21:51 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
+	char			*stupid;
 	unsigned int	i;
-	unsigned int	j;
 
+	stupid = dest;
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	while (*dest)
+		dest++;
+	while (i < nb && *src)
 	{
+		*dest++ = *src++;
 		i++;
 	}
-	while ((j < nb) && (src[j]))
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	*dest = '\0';
+	return (stupid);
 }

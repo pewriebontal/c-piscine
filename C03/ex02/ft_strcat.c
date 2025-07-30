@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:04:27 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/30 14:07:58 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/30 14:21:53 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
-	char	*ori_dest;
+	char	*stupid;
 
-	ori_dest = dest;
+	stupid = dest;
 	while (*dest)
 		dest++;
 	while (*src)
@@ -24,5 +24,5 @@ char	*ft_strcat(char *dest, char *src)
 		dest++;
 	}
 	*dest = '\0';
-	return (ori_dest);
+	return (stupid);
 }

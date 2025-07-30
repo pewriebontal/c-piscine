@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:04:50 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/30 14:09:06 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/30 14:21:50 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,12 @@ char	*ft_strstr(char *str, char *to_find)
 		while (to_find[j] != '\0')
 		{
 			if (str[i + j] == to_find[j])
-			{
 				j++;
-			}
 			else
 				break ;
 		}
 		if (to_find[j] == '\0')
-		{
 			return (str + i);
-		}
 		i++;
 	}
 	return (0);
