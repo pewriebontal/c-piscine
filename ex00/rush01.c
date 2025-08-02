@@ -6,7 +6,7 @@
 /*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/02 17:09:32 by aiyahaya         ###   ########.fr       */
+/*   Updated: 2025/08/02 17:50:32 by aiyahaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ example:
 
 // reminders: cannot def > 5 functions in one file
 
-char	*create_array(int size)
+char	*create_char_array(int size)
 {
 	char	*arr;
 	int		i;
@@ -94,7 +94,7 @@ char	*ft_getarr(char *arr, int col, int grid)
 	int		i;
 
 	i = 0;
-	clues = create_array(grid);
+	clues = create_char_array(grid);
 	while (i < grid * 2)
 	{
 		if (col == 1)
