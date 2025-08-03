@@ -6,22 +6,18 @@
 /*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/02 17:50:32 by aiyahaya         ###   ########.fr       */
+/*   Updated: 2025/08/03 19:13:22 by aiyahaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+// use stdlib.h for malloc & free
 
-//use stdlib.h for malloc & free
-
-/* 
+/*
 format:
-./rush01 "col1top col2top col3top col4top 
-col1bottom col2bottom col3bottom col4bottom 
-row1left row2left row3left row4left 
-row1right row2right row3right row4right" 
+./rush01 "col1top col2top col3top col4top
+col1bottom col2bottom col3bottom col4bottom
+row1left row2left row3left row4left
+row1right row2right row3right row4right"
 
 example:
 ./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
@@ -29,117 +25,80 @@ example:
 
 // reminders: cannot def > 5 functions in one file
 
-char	*create_char_array(int size)
+//                       _oo0oo_
+//                      o8888888o
+//                      88" . "88
+//                      (| -_- |)
+//                      0\  =  /0
+//                    ___/`---'\___
+//                  .' \\|     |// '.
+//                 / \\|||  :  |||// |
+//                / _||||| -:- |||||- \
+//               |   | \\\  -  /// |   |
+//               | \_|  ''\---/''  |_/ |
+//               \  .-\__  '-'  ___/-. /
+//             ___'. .'  /--.--\  `. .'___
+//          ."" '<  `.___\_<|>_/___.' >' "".
+//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//         \  \ `_.   \_ __\ /__ _/   .-` /  /
+//     =====`-.____`.___ \_____/___.-`___.-'=====
+//                       `=---='
+//
+//
+//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//               佛祖保佑         永无BUG
+//
+
+#include "rush01.h"
+
+/**
+ * @brief This is the main "manager" function. It directs the whole process:
+ *        build the city, use logic to place easy buildings, then call the
+ *        master detective (`solve`) to finish the job.
+ *
+ * @param clues The list of clues.
+ * @param gridsize The size of the city.
+ * @return void
+ */
+void	run_solver(int *clues, int gridsize)
 {
-	char	*arr;
-	int		i;
+	t_cell	**grid;
 
-	arr = malloc(size * sizeof(int));
-	i = 0;
-	if (!arr)
-		return (NULL);
-	while (i < size)
+	grid = create_grid(gridsize);
+	if (!grid)
 	{
-		arr[i] = i * 2;
-		i++;
+		print_error();
+		return ;
 	}
-	return (arr);
-}
-
-// ASCII index for digits: 48-57
-int	ft_strlen(char *c)
-{
-	int		i;
-	int		count;
-	char	*result;
-
-	i = 0;
-	count = 0;
-	result = c;
-	while (c[i])
-	{
-		if (c[i] >= 48 && c[i] <= 57)
-		{
-			result[count] = c[i];
-			count++;
-		}
-		i++;
-	}
-	result[count] = '\0';
-	return (count);
-}
-
-int	ft_gridsize(int x)
-{
-	int	i;
-	int	y;
-
-	i = 9;
-	y = 0;
-	while (i >= 4)
-	{
-		if (i * i == x)
-			y = i;
-		i --;
-	}
-	return (y);
-}
-
-// function to return col/row arrays
-// return col arrays when col = 1
-// return row arrays when col = 0
-char	*ft_getarr(char *arr, int col, int grid)
-{
-	char	*clues;
-	int		i;
-
-	i = 0;
-	clues = create_char_array(grid);
-	while (i < grid * 2)
-	{
-		if (col == 1)
-			clues[i] = arr[i];
-		else
-			clues[i] = arr[(grid * 2) + i];
-		i++;
-	}
-	clues[i] = '\0';
-	return (clues);
-}
-
-int	main(int argc, char *argv[])
-{
-	int		size;
-	int		grid;
-	char	*clues;
-	char	*col_clues;
-	char	*row_clues;
-
-	if (argc == 2)
-	{
-		clues = argv[1];
-		size = ft_strlen(clues);
-		grid = ft_gridsize(size);
-		if (grid >= 4)
-		{
-			printf("Solving %d values in a %dx%d grid.\n", size, grid, grid);
-			printf("clues: %s\n", clues);
-			col_clues = ft_getarr(clues, 1, grid);
-			row_clues = ft_getarr(clues, 0, grid);
-			printf("cols:  %s\nrows:  %s\n", col_clues, row_clues);
-			free(col_clues);
-			free(row_clues);
-		}
-		else
-		{
-			write(1, "Error\n", 6);
-			return (1);
-		}
-		return (0);
-	}
+	lock_cells_from_simple_clues_cols(grid, clues, gridsize);
+	lock_cells_from_simple_clues_rows(grid, clues, gridsize);
+	lock_cells_from_advanced_clues(grid, clues, gridsize);
+	if (solve(grid, clues, gridsize))
+		ft_print_grid(grid, gridsize);
 	else
+		print_error();
+	free_grid(grid, gridsize);
+}
+
+int	main(int argc, char **argv)
+{
+	int	*clues;
+	int	gridsize;
+
+	if (argc != 2 || !validate_input_and_get_size(argv[1], &gridsize))
 	{
-		write(1, "Error\n", 6);
+		print_error();
 		return (1);
 	}
+	clues = malloc(sizeof(int) * (gridsize * gridsize));
+	if (!clues)
+	{
+		print_error();
+		return (1);
+	}
+	fill_clues_array(argv[1], clues, gridsize);
+	run_solver(clues, gridsize);
+	free(clues);
+	return (0);
 }
