@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:17:16 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 18:30:21 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 18:38:58 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,14 @@ int	check_right_view(t_cell **grid, int *clues, int n, int i)
 	return (result);
 }
 
+/**
+ * @brief This helper function looks down a single street and counts how many
+ *        buildings are visible from one end.
+ *
+ * @param line A list of building heights for one street.
+ * @param n The number of buildings on that street.
+ * @return The total number of buildings that can be seen.
+ */
 int	count_visible_buildings(int *line, int n)
 {
 	int	visible_count;

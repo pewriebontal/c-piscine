@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:23:09 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 18:30:35 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 18:43:34 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@
 
 #include "rush01.h"
 
+/**
+ * @brief This function updates our notepads. When we place a building on a
+ *        lot, this function goes to all the other empty lots in the same row
+ *        and same column and crosses that building's height off their list of
+ *        possible candidates. It can also undo this process if we have to
+ *        backtrack (the 'restore' parameter tells it what to do).
+ *
+ * @param cell The specific lot where we just placed or removed a building.
+ * @param grid The entire city map.
+ * @param n The size of our city (e.g., 4 for a 4x4 city).
+ * @param restore A switch. If it's 0, we are placing a building and should
+ *                *remove* its height from other candidates. If it's 1, we are
+ *                backtracking and should *add* its height back.
+ * @return void
+ */
 void	toggle_candidates(t_cell *cell, t_cell **grid, int n, int restore)
 {
 	int	i;
@@ -59,6 +74,19 @@ void	toggle_candidates(t_cell *cell, t_cell **grid, int n, int restore)
 	}
 }
 
+/**
+ * @brief This is our "locking" function. When we are 100% sure a building
+ *        belongs on a certain lot, this function places it there. It sets the
+ *        lot's height and erases all other possibilities from that lot's
+ *        personal notepad (`candidate` list). Then, it calls another function
+ *        to update the notepads of all the other lots on the same streets.
+ *
+ * @param cell The specific lot we want to lock a building into.
+ * @param grid The entire city map.
+ * @param num The height of the building we are locking in.
+ * @param n The size of our city.
+ * @return void
+ */
 void	place_and_lock(t_cell *cell, t_cell **grid, int num, int n)
 {
 	int	k;
@@ -77,6 +105,18 @@ void	place_and_lock(t_cell *cell, t_cell **grid, int num, int n)
 	}
 }
 
+/**
+ * @brief A small helper that checks one lot to see if it's a better choice
+ *        for our solver to work on next than our current best choice.
+ *
+ * @param grid The city map.
+ * @param coords The [row, column] address of the lot 
+ * 		we are currently looking at.
+ * @param best A collection of pointers that keeps track of
+		the best lot found so far.
+ * @param n The size of our city.
+ * @return void
+ */
 void	check_and_update_best_cell(t_cell **grid, int *coords, int **best,
 		int n)
 {
@@ -99,6 +139,15 @@ void	check_and_update_best_cell(t_cell **grid, int *coords, int **best,
 	}
 }
 
+/**
+ * @brief Reads the numbers from the input string and puts them into our
+ *        integer array of clues.
+ * 
+ * @param arg The text string given to the program.
+ * @param clues The integer array where we will store the clues.
+ * @param gridsize The size of our city.
+ * @return void
+ */
 void	fill_clues_array(char *arg, int *clues, int gridsize)
 {
 	int	i;

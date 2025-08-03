@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/03 18:34:06 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 18:42:06 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,15 @@ example:
 
 #include "rush01.h"
 
+/**
+ * @brief This is the main "manager" function. It directs the whole process:
+ *        build the city, use logic to place easy buildings, then call the
+ *        master detective (`solve`) to finish the job.
+ *
+ * @param clues The list of clues.
+ * @param gridsize The size of the city.
+ * @return void
+ */
 void	run_solver(int *clues, int gridsize)
 {
 	t_cell	**grid;

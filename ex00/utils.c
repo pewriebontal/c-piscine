@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:13:16 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 18:30:29 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 18:43:05 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,15 @@ void	print_error(void)
 	write(1, "Error\n", 6);
 }
 
+/**
+ * @brief After we think we have a full solution, this function does a final
+ *        check of every single clue to make sure we got it right.
+ *
+ * @param grid The completed city map.
+ * @param clues The list of clues from the puzzle box.
+ * @param n The size of our city.
+ * @return 1 if the solution is perfect, 0 if there's a mistake.
+ */
 int	is_solution_valid(t_cell **grid, int *clues, int n)
 {
 	int	i;
@@ -97,6 +106,14 @@ int	ft_gridsize(int x)
 	return (y);
 }
 
+/**
+ * @brief Checks if the input string is valid and figures out the size of the
+ *        city grid we need to build.
+ * 
+ * @param arg The text string given to the program.
+ * @param gridsize A pointer to a variable where we'll store the city size.
+ * @return 1 if the input is good, 0 if it's bad.
+ */
 int	validate_input_and_get_size(char *arg, int *gridsize)
 {
 	int	num_count;
