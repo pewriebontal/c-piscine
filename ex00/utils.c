@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush01.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/03 18:30:14 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/03 18:13:16 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/03 18:30:29 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// use stdlib.h for malloc & free
-
-/*
-format:
-./rush01 "col1top col2top col3top col4top
-col1bottom col2bottom col3bottom col4bottom
-row1left row2left row3left row4left
-row1right row2right row3right row4right"
-
-example:
-./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
-*/
-
-// reminders: cannot def > 5 functions in one file
 
 //                       _oo0oo_
 //                      o8888888o
@@ -52,44 +37,85 @@ example:
 
 #include "rush01.h"
 
-void	run_solver(int *clues, int gridsize)
+void	print_error(void)
 {
-	t_cell	**grid;
-
-	grid = create_grid(gridsize);
-	if (!grid)
-	{
-		print_error();
-		return ;
-	}
-	lock_cells_from_simple_clues_cols(grid, clues, gridsize);
-	lock_cells_from_simple_clues_rows(grid, clues, gridsize);
-	lock_cells_from_advanced_clues(grid, clues, gridsize);
-	if (solve(grid, clues, gridsize))
-		ft_print_grid(grid, gridsize);
-	else
-		print_error();
-	free_grid(grid, gridsize);
+	write(1, "Error\n", 6);
 }
 
-int	main(int argc, char **argv)
+int	is_solution_valid(t_cell **grid, int *clues, int n)
 {
-	int	*clues;
-	int	gridsize;
+	int	i;
 
-	if (argc != 2 || !validate_input_and_get_size(argv[1], &gridsize))
+	i = 0;
+	while (i < n)
 	{
-		print_error();
-		return (1);
+		if (!check_top_view(grid, clues, n, i) || !check_bottom_view(grid,
+				clues, n, i) || !check_left_view(grid, clues, n, i)
+			|| !check_right_view(grid, clues, n, i))
+			return (0);
+		i++;
 	}
-	clues = malloc(sizeof(int) * (gridsize * 4));
-	if (!clues)
+	return (1);
+}
+
+// ASCII index for digits: 48-57
+int	ft_strlen(char *c)
+{
+	int		i;
+	int		count;
+	char	*result;
+
+	i = 0;
+	count = 0;
+	result = c;
+	while (c[i])
 	{
-		print_error();
-		return (1);
+		if (c[i] >= 48 && c[i] <= 57)
+		{
+			result[count] = c[i];
+			count++;
+		}
+		i++;
 	}
-	fill_clues_array(argv[1], clues, gridsize);
-	run_solver(clues, gridsize);
-	free(clues);
-	return (0);
+	result[count] = '\0';
+	return (count);
+}
+
+int	ft_gridsize(int x)
+{
+	int	i;
+	int	y;
+
+	i = 9;
+	y = 0;
+	while (i >= 4)
+	{
+		if (i * i == x)
+			y = i;
+		i--;
+	}
+	return (y);
+}
+
+int	validate_input_and_get_size(char *arg, int *gridsize)
+{
+	int	num_count;
+	int	i;
+
+	num_count = 0;
+	i = 0;
+	while (arg[i])
+	{
+		if (arg[i] >= '0' && arg[i] <= '9')
+			num_count++;
+		else if (arg[i] != ' ')
+			return (0);
+		i++;
+	}
+	if (num_count == 0 || num_count % 4 != 0)
+		return (0);
+	*gridsize = num_count / 4;
+	if (*gridsize < 4 || *gridsize > 9)
+		return (0);
+	return (1);
 }

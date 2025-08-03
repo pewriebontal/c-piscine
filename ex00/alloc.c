@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush01.c                                           :+:      :+:    :+:   */
+/*   alloc.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/03 18:30:14 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/03 18:11:37 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/03 18:29:29 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// use stdlib.h for malloc & free
-
-/*
-format:
-./rush01 "col1top col2top col3top col4top
-col1bottom col2bottom col3bottom col4bottom
-row1left row2left row3left row4left
-row1right row2right row3right row4right"
-
-example:
-./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
-*/
-
-// reminders: cannot def > 5 functions in one file
 
 //                       _oo0oo_
 //                      o8888888o
@@ -52,44 +37,73 @@ example:
 
 #include "rush01.h"
 
-void	run_solver(int *clues, int gridsize)
+t_cell	**create_grid(int size)
 {
 	t_cell	**grid;
+	int		i;
+	int		j;
 
-	grid = create_grid(gridsize);
+	grid = malloc(sizeof(t_cell *) * size);
 	if (!grid)
+		return (NULL);
+	i = 0;
+	while (i < size)
 	{
-		print_error();
-		return ;
+		grid[i] = malloc(sizeof(t_cell) * size);
+		if (!grid[i])
+		{
+			free_grid(grid, i);
+			return (NULL);
+		}
+		j = 0;
+		while (j < size)
+		{
+			initialize_one_cell(&grid[i][j], i, j, size);
+			j++;
+		}
+		i++;
 	}
-	lock_cells_from_simple_clues_cols(grid, clues, gridsize);
-	lock_cells_from_simple_clues_rows(grid, clues, gridsize);
-	lock_cells_from_advanced_clues(grid, clues, gridsize);
-	if (solve(grid, clues, gridsize))
-		ft_print_grid(grid, gridsize);
-	else
-		print_error();
-	free_grid(grid, gridsize);
+	return (grid);
 }
 
-int	main(int argc, char **argv)
+void	free_grid(t_cell **grid, int n)
 {
-	int	*clues;
-	int	gridsize;
+	int	i;
+	int	j;
 
-	if (argc != 2 || !validate_input_and_get_size(argv[1], &gridsize))
+	if (!grid)
+		return ;
+	i = 0;
+	while (i < n)
 	{
-		print_error();
-		return (1);
+		if (grid[i])
+		{
+			j = 0;
+			while (j < n && grid[i][j].candidate)
+			{
+				free(grid[i][j].candidate);
+				grid[i][j].candidate = NULL;
+				j++;
+			}
+			free(grid[i]);
+		}
+		i++;
 	}
-	clues = malloc(sizeof(int) * (gridsize * 4));
-	if (!clues)
+	free(grid);
+}
+
+void	initialize_one_cell(t_cell *cell, int row, int col, int n)
+{
+	int	k;
+
+	cell->x = col;
+	cell->y = row;
+	cell->height = 0;
+	cell->candidate = malloc(sizeof(int) * n);
+	k = 0;
+	while (k < n)
 	{
-		print_error();
-		return (1);
+		cell->candidate[k] = k + 1;
+		k++;
 	}
-	fill_clues_array(argv[1], clues, gridsize);
-	run_solver(clues, gridsize);
-	free(clues);
-	return (0);
 }
