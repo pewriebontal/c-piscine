@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/03 18:30:14 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 18:34:06 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 		print_error();
 		return (1);
 	}
-	clues = malloc(sizeof(int) * (gridsize * 4));
+	clues = malloc(sizeof(int) * (gridsize * gridsize));
 	if (!clues)
 	{
 		print_error();
