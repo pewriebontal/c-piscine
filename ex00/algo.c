@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:15:37 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 18:41:02 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 19:11:08 by aiyahaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@
  * @param clues The list of clues.
  * @param n The size of our city.
  * @return 1 if it found a solution, 0 if it was a dead end.
+ * to check each step, edit after line 71 : print_permutation(grid, n);
  */
 int	solve(t_cell **grid, int *clues, int n)
 {
@@ -68,7 +69,6 @@ int	solve(t_cell **grid, int *clues, int n)
 		if (num_to_try != 0)
 		{
 			grid[row][col].height = num_to_try;
-			print_permutation(grid, n);
 			toggle_candidates(&grid[row][col], grid, n, 0);
 			if (solve(grid, clues, n))
 				return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:13:16 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 18:43:05 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 19:07:43 by aiyahaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,10 +129,16 @@ int	validate_input_and_get_size(char *arg, int *gridsize)
 			return (0);
 		i++;
 	}
-	if (num_count == 0 || num_count % 4 != 0)
+	if (num_count == 0)
 		return (0);
-	*gridsize = num_count / 4;
-	if (*gridsize < 4 || *gridsize > 9)
+	i = 9;
+	while (i >= 4)
+	{
+		if (i * i == num_count)
+			*gridsize = i;
+		i--;
+	}
+	if (!(*gridsize >= 4))
 		return (0);
 	return (1);
 }

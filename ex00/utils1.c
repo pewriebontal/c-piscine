@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:23:09 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 18:43:34 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/03 19:03:53 by aiyahaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ void	fill_clues_array(char *arg, int *clues, int gridsize)
 
 	i = 0;
 	count = 0;
-	while (arg[i] && count < (gridsize * 4))
+	while (arg[i] && count < (gridsize * gridsize))
 	{
 		if (arg[i] >= '1' && arg[i] <= ('0' + gridsize))
 		{
