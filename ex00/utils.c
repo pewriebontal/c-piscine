@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
+/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 18:13:16 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/03 19:07:43 by aiyahaya         ###   ########.fr       */
+/*   Updated: 2025/08/03 20:05:23 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	ft_gridsize(int x)
 /**
  * @brief Checks if the input string is valid and figures out the size of the
  *        city grid we need to build.
- * 
+ *
  * @param arg The text string given to the program.
  * @param gridsize A pointer to a variable where we'll store the city size.
  * @return 1 if the input is good, 0 if it's bad.
@@ -134,7 +134,7 @@ int	validate_input_and_get_size(char *arg, int *gridsize)
 	i = 9;
 	while (i >= 4)
 	{
-		if (i * i == num_count)
+		if (i * 4 == num_count)
 			*gridsize = i;
 		i--;
 	}

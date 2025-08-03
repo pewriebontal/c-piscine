@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aiyahaya <aiyahaya@student.42singapore.    +#+  +:+       +#+        */
+/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:11:03 by aiyahaya          #+#    #+#             */
-/*   Updated: 2025/08/03 19:13:22 by aiyahaya         ###   ########.fr       */
+/*   Updated: 2025/08/03 20:04:39 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int	main(int argc, char **argv)
 	int	*clues;
 	int	gridsize;
 
+	gridsize = 0;
 	if (argc != 2 || !validate_input_and_get_size(argv[1], &gridsize))
 	{
 		print_error();
