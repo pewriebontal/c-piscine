@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:05:13 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/04 17:39:21 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/04 17:44:57 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -18,17 +16,12 @@ int	ft_strlen(char *str)
 
 	count = 0;
 	while (str[count] != '\0')
-	{
 		count++;
-	}
 	return (count);
 }
-/*
-int	main(void)
-{
-	int	r;
 
-	r = ft_strlen("You Are Awesome");
-	printf("%d", r);
-}
-*/
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("%d", ft_strlen("You Are Awesome"));
+// }

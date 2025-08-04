@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:05:57 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/03 16:05:57 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/04 17:44:58 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 void	ft_putstr(char *str)
 {
-	int	count;
-
-	count = 0;
-	while (str[count] != '\0')
+	while (*str != '\0')
 	{
-		write(1, &str[count], 1);
-		count++;
+		write(1, &(*str), 1);
+		++str;
 	}
 }
-/*
-int	main(void)
-{
-	ft_putstr("I Want Love");
-}
-*/
+
+// int	main(void)
+// {
+// 	ft_putstr("You Are Awesome");
+// }
