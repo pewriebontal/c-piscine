@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:11:20 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/04 16:11:20 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/04 18:03:56 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,14 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-
-	i = 0;
-	while (str1[i] != '\0' || str2[i] != '\0')
+	while ((*s1 == *s2) && (*s1 && *s2))
 	{
-		if (str1[i] == str2[i])
-			i++;
-		if (str1[i] < str2[i] || str1[i] > str2[i])
-			return (str1[i] - str2[i]);
+		s1++;
+		s2++;
 	}
-	return (0);
+	return (*s1 - *s2);
 }
 
 void	ft_swap(char **a, char **b)
@@ -62,9 +57,7 @@ int	main(int argc, char *argv[])
 		while (j < argc - 1)
 		{
 			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
-			{
 				ft_swap(&argv[j], &argv[j + 1]);
-			}
 			j++;
 		}
 		x++;
