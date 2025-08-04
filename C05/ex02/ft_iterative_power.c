@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:09:54 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/03 16:09:54 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/04 17:46:37 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (nb);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
-{
-	printf("%i", ft_iterative_power(3, 4 ));
-}
-*/
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("%i", ft_iterative_power(3, 4 ));
+// }

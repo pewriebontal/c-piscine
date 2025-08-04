@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:06:31 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/03 16:06:31 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/04 17:46:19 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ int	ft_recursive_factorial(int nb)
 		return (1);
 	return (nb * ft_recursive_factorial(nb - 1));
 }
-/*
-#include <stdio.h>
 
-int	main(void)
-{
-	printf("%i", ft_recursive_factorial(9));
-}
-*/
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("%i", ft_recursive_factorial(9));
+// }
