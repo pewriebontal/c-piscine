@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: mikhaing <mikhaing@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:55:51 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:43 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/22 18:04:31 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/22 18:13:22 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,8 @@ void	ft_putchar(char c)
 {
 	write(1, &c, sizeof(c));
 }
+
+// int main(void)
+// {
+// 	ft_putchar('a');
+// }

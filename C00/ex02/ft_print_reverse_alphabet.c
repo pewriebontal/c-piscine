@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: mikhaing <mikhaing@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:56:14 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:43 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/22 18:17:03 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/22 18:23:31 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ void	ft_print_reverse_alphabet(void)
 	char	c;
 
 	c = 'z';
-	while (c > '`')
+	while (c > 96)
 	{
 		write(1, &c, sizeof(c));
-		c--;
+		--c;
 	}
 }
+
+// int main(void)
+// {
+// 	ft_print_reverse_alphabet();
+// }
