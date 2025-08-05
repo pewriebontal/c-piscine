@@ -5,21 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:57:51 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/23 18:20:15 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/05 13:45:27 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putstr(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (!str && str == NULL)
+		return ;
+	while (*str)
 	{
-		write(1, &str[i], sizeof(str[i]));
-		i++;
+		ft_putchar(*str);
+		++str;
 	}
 }
+
+// int	main(void)
+// {
+// 	char	*a;
+
+// 	a = NULL;
+// 	ft_putstr(a);
+// 	ft_putstr("Hello, World!\n");
+// 	return (0);
+// }

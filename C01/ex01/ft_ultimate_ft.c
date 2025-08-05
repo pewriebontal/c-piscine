@@ -5,14 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/25 00:01:06 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/24 11:59:07 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/05 13:45:11 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int j = 24;
+
+// 	int *a = &j;
+// 	int **b = &a;
+// 	int ***c = &b;
+// 	int ****d = &c;
+// 	int *****e = &d;
+// 	int ******f = &e;
+// 	int *******g = &f;
+// 	int ********h = &g;
+// 	int *********i = &h;
+
+// 	ft_ultimate_ft(i);
+// 	printf("%d", j);
+// }

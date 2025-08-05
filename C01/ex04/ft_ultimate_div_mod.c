@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:57:45 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/28 16:25:52 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/05 13:45:23 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int	x;
-	int	y;
+	int	div;
+	int	mod;
 
-	x = *a;
-	y = *b;
-	*a = x / y;
-	*b = x % y;
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }

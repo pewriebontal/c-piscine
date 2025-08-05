@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
+/*   By: mikhaing <mikhaing@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:57:12 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/23 18:11:08 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/07/23 18:11:34 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,3 +14,14 @@ void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int	a;
+
+// 	a = 1;
+// 	ft_ft(&a);
+// 	printf("%d", a);
+// }
