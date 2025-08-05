@@ -5,37 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:00:19 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/29 15:09:17 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/05 13:49:08 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-//#include <stdio.h>
+int	ft_islow(char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
+}
 
 char	*ft_strupcase(char *str)
 {
-	int	i;
+	char	*ptr;
 
-	i = 0;
-	while (str[i] != '\0')
+	ptr = str;
+	while (*str)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = str[i] - 32;
-		}
-		i++;
+		if (ft_islow(*str))
+			*str -= 32;
+		++str;
 	}
-	return (str);
+	return (ptr);
 }
-/*
-int	main(void)
-{
-	char str[] = "Hello, World!";
-	printf("Before conversion: %s\n", str);
-	ft_strupcase(str);
-	printf("After conversion: %s\n", str);
-	return (0);
-}
-*/

@@ -5,45 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:59:52 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/24 14:16:08 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/02 15:36:32 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-//#include <stdio.h>
+int	ft_islow(char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
+}
 
 int	ft_str_is_lowercase(char *str)
 {
-	int	i;
-
-	i = 0;
-	if (str[i] == '\0')
-	{
+	if (*str == '\0')
 		return (1);
-	}
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if (str[i] < 'a' || str[i] > 'z')
-		{
+		if (!ft_islow(*str))
 			return (0);
-		}
-		i++;
+		++str;
 	}
 	return (1);
 }
-/*
-int	main(void)
-{
-	int	i;
 
-	char * str;
-//	str = "1232";
-	str = "Hello1";
-//	str = "hello";
-	i = ft_str_is_lowercase(str);
-	printf("%d", i);
-	return (0);
-}
-*/
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("%d\n", ft_str_is_lowercase("HELLaL"));
+// 	printf("%d\n", ft_str_is_lowercase("{}"));
+// }

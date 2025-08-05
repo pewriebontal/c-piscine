@@ -5,43 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 15:59:33 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/24 14:16:08 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/02 15:34:49 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-//#include <stdio.h>
+int	ft_isalpha(char c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
+}
 
 int	ft_str_is_alpha(char *str)
 {
-	int	i;
-
-	i = 0;
-	if (str[i] == '\0')
-	{
+	if (*str == '\0')
 		return (1);
-	}
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
-		{
+		if (!ft_isalpha(*str))
 			return (0);
-		}
-		i++;
+		++str;
 	}
 	return (1);
 }
-/*
-int	main(void)
-{
-	int	i;
 
-	char * str;
-	str = "HELLO";
-	i = ft_str_is_alpha(str);
-	printf("%d", i);
-	return (0);
-}
-*/
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("%d\n", ft_str_is_alpha("Hello"));
+// 	printf("%d\n", ft_str_is_alpha("{}"));
+// }
