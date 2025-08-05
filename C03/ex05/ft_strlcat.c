@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:08:57 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/30 14:20:07 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:08:16 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,21 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[dest_len] = '\0';
 	return (total_len);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main(void)
+// {
+// 	char *dest = NULL;
+// 	// char dest[20] = "Hello, ";
+// 	char src[] = "World!";
+// 	unsigned int size = 20;
+
+// 	unsigned int result = ft_strlcat(dest, src, size);
+
+// 	// Output the result
+// 	printf("Resulting string: %s\n", dest);
+// 	printf("Total length: %u\n", result);
+
+// 	return (0);
+// }
