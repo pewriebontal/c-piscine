@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:34:08 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 20:09:45 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/10 21:49:08 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	parse_line(char *line, t_dict_entry *entry)
 {
 	int		i;
 	int		j;
-	char	key[32];
-	char	val[128];
+	char	key[60];
+	char	val[1048];
 
 	i = 0;
 	j = 0;
