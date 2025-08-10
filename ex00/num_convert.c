@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:22:04 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 20:09:54 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/10 20:28:14 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,43 +40,53 @@ void	get_current_group(char *group_buf, char *num_str, int g_idx, int f_len)
 	}
 }
 
+void	process_one_group(t_dict_entry *dict, int d_size, char *n_str,
+		int *vars)
+{
+	char	group_buffer[4];
+	int		group_idx;
+	int		group_count;
+	int		first_len;
+	int		*space_flag;
+
+	group_idx = vars[0];
+	group_count = vars[1];
+	first_len = vars[2];
+	space_flag = (int *)&(vars[3]);
+	get_current_group(group_buffer, n_str, group_idx, first_len);
+	if (is_group_non_zero(group_buffer))
+	{
+		print_three_digits(dict, d_size, group_buffer, space_flag);
+		if (group_idx < group_count - 1)
+			print_magnitude(dict, d_size, group_count - 1 - group_idx,
+				space_flag);
+	}
+}
+
 void	process_groups(t_dict_entry *dict, int dict_size, char *num_str)
 {
-	int		group_idx;
-	int		first_group_len;
-	char	group_buffer[4];
+	int		vars[4];
 	size_t	len;
-	int		group_count;
-	int		space_flag;
 
-	space_flag = 0;
 	len = ft_strlen(num_str);
-	group_count = (len + 2) / 3;
-	first_group_len = len % 3;
-	if (first_group_len == 0 && len > 0)
-		first_group_len = 3;
-	group_idx = 0;
-	while (group_idx < group_count)
+	vars[0] = 0;
+	vars[1] = (len + 2) / 3;
+	vars[2] = len % 3;
+	if (vars[2] == 0 && len > 0)
+		vars[2] = 3;
+	vars[3] = 0;
+	while (vars[0] < vars[1])
 	{
-		get_current_group(group_buffer, num_str, group_idx, first_group_len);
-		if (is_group_non_zero(group_buffer))
-		{
-			print_three_digits(dict, dict_size, group_buffer, &space_flag);
-			if (group_idx < group_count - 1)
-				print_magnitude(dict, dict_size, group_count - 1 - group_idx,
-					&space_flag);
-		}
-		group_idx++;
+		process_one_group(dict, dict_size, num_str, vars);
+		vars[0]++;
 	}
 }
 
 void	convert_number(t_dict_entry *dict, int d_size, char *num_str)
 {
-	size_t	len;
 	char	*zero_val;
 
-	len = ft_strlen(num_str);
-	if (len == 1 && num_str[0] == '0')
+	if (ft_strlen(num_str) == 1 && num_str[0] == '0')
 	{
 		zero_val = find_value(dict, d_size, "0");
 		if (zero_val)
