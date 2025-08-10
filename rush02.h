@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 10:05:01 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 18:53:54 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/10 18:55:58 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void				free_dictionary(t_dict_entry *dict, int size);
 // gnl.c
 char				*get_next_line(int fd);
 
-void	print_error(char *message);
+void				print_error(char *message);
 #endif
