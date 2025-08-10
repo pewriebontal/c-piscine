@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 10:05:01 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 19:20:41 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/10 20:11:05 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,21 @@ int					is_valid_number(char *str);
 int					is_group_non_zero(char *group);
 int					check_dict(t_dict_entry *dict, int size);
 void				print_error(char *message);
+
+// num_convert.c
+void				get_current_group(char *group_buf, char *num_str, int g_idx,
+						int f_len);
+void				process_groups(t_dict_entry *dict, int dict_size,
+						char *num_str);
+void				convert_number(t_dict_entry *dict, int d_size,
+						char *num_str);
+
+// convert_utils.c
+void				print_tens(t_dict_entry *d, int ds, char *tens_digits,
+						int *space_flag);
+void				print_three_digits(t_dict_entry *d, int ds, char *grp,
+						int *space_flag);
+void				print_magnitude(t_dict_entry *d, int ds, int mag_idx,
+						int *space_flag);
 
 #endif

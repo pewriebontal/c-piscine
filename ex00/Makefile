@@ -6,7 +6,7 @@
 #    By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/09 22:06:32 by mikhaing          #+#    #+#              #
-#    Updated: 2025/08/10 19:14:23 by mikhaing         ###   ########.fr        #
+#    Updated: 2025/08/10 20:05:34 by mikhaing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SRCS =	dict_parse.c \
 		string_utils.c \
 		string_utils1.c \
 		val.c \
+		num_convert.c \
+		convert_utils.c \
 		rush02.c
 		
 OBJS = $(SRCS:.c=.o)
