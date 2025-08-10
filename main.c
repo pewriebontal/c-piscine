@@ -6,7 +6,7 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 22:09:10 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 18:36:13 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/10 18:54:26 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2 || argc > 3)
 	{
-		write(1, "Error\n", 6);
+		print_error("Error\n");
 		return (1);
 	}
 	if (argc == 2)

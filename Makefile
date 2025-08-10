@@ -6,7 +6,7 @@
 #    By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/09 22:06:32 by mikhaing          #+#    #+#              #
-#    Updated: 2025/08/10 18:36:18 by mikhaing         ###   ########.fr        #
+#    Updated: 2025/08/10 18:54:10 by mikhaing         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS =	main.c \
 		list_utils.c \
 		dict_paras.c \
 		dict_utils.c \
+		val.c \
+		
 
 OBJS = $(SRCS:.c=.o)
 
