@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   dict_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 22:09:10 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 18:36:13 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/08/10 18:34:14 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/10 18:36:03 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
 
-int	main(int argc, char **argv)
+char	*find_value(t_dict_entry *dict, int size, char *key)
 {
-	char	*dict_path;
-	char	*number_to_convert;
+	int	i;
 
-	if (argc < 2 || argc > 3)
+	i = 0;
+	while (i < size)
 	{
-		write(1,"Error\n", 6);
-		return (1);
-	}
-	if (argc == 2)
-	{
-		dict_path = "numbers.dict";
-		number_to_convert = argv[1];
-	}
-	else
-	{
-		dict_path = argv[1];
-		number_to_convert = argv[2];
+		if (ft_strcmp(dict[i].key_num, key) == 0)
+			return (dict[i].value_word);
+		i++;
 	}
 	return (0);
+}
+
+void	free_dictionary(t_dict_entry *dict, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(dict[i].key_num);
+		free(dict[i].value_word);
+		i++;
+	}
+	free(dict);
 }
