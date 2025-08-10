@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2 || argc > 3)
 	{
-		write(1,"Error\n", 6);
+		write(1, "Error\n", 6);
 		return (1);
 	}
 	if (argc == 2)

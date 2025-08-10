@@ -29,7 +29,7 @@ void	ft_putstr(char *str, int apply_space)
 char	*ft_strdup(char *src)
 {
 	int		i;
-	size_t		len;
+	size_t	len;
 	char	*dest;
 
 	len = ft_strlen(src);
