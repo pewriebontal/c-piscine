@@ -6,13 +6,11 @@
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 16:25:26 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/08/10 18:56:08 by mikhaing         ###   ########.fr       */
+/*   Updated: 2025/08/10 19:20:19 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
-#define GNL_BUFFER_SIZE 42
-#define MAX_FD 1024
 
 char	*find_new_line(char **temp_box)
 {
