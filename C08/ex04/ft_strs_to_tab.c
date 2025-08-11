@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:12:32 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:43 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/20 16:12:32 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/11 14:26:16 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 int	ft_strlen(char *str)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	count = 0;
+	while (str[count])
+		++count;
+	return (count);
 }
 
 char	*ft_strdup(char *src)
