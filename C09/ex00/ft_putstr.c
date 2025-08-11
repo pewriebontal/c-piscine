@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:13:17 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:43 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/20 16:13:17 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/11 17:02:47 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_putstr(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		write(1, &str[i], sizeof(str[i]));
-		i++;
+		write(1, &(*str), sizeof(*str));
+		++str;
 	}
 }
