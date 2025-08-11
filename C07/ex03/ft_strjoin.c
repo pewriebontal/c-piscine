@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:11:49 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/20 16:11:49 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/11 14:51:48 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 
 int	ft_strlen(char *str)
 {
-	int	len;
+	int	count;
 
-	len = 0;
-	while (*str)
-	{
-		len++;
-		str++;
-	}
-	return (len);
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }
 
 char	*ft_strcpy(char *dest, char *src)
@@ -73,7 +70,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	len = return_length(size, strs, ft_strlen(sep));
 	i = 0;
 	result = malloc(len + 1);
-	if (result == NULL)
+	if (NULL == result)
 		return (0);
 	while (i < size)
 	{
@@ -85,18 +82,18 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	*result = '\0';
 	return (result - len);
 }
-/*
-int	main(void)
-{
-	char	*result;
-	char	*strs[] = {"Hello","world","How are you?"};
-	int	size;
-	char	*sep;
 
-	size = 3;
-	sep = ", ";
-	result = ft_strjoin(size, strs, sep);
-	printf("Concatenated string: %s\n", result);
-	free(result);
-	return (0);
-}*/
+// int	main(void)
+// {
+// 	char	*result;
+// 	char	*strs[] = {"Hello","world","How are you?"};
+// 	int	size;
+// 	char	*sep;
+
+// 	size = 3;
+// 	sep = ", ";
+// 	result = ft_strjoin(size, strs, sep);
+// 	printf("Concatenated string: %s\n", result);
+// 	free(result);
+// 	return (0);
+// }

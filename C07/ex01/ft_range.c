@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:11:35 by mikhaing          #+#    #+#             */
-/*   Updated: 2025/07/25 08:30:44 by mikhaing         ###   ########.fr       */
+/*   Created: 2025/07/20 16:11:35 by mikhaing          #+#    #+#             */
+/*   Updated: 2025/08/11 14:42:26 by mikhaing         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,12 @@ int	*ft_range(int min, int max)
 	int	j;
 
 	if (min >= max)
-	{
 		return (NULL);
-	}
 	i = max - min;
 	j = 0;
 	dest = (int *)malloc(sizeof(int) * i);
-	if (dest == NULL)
-	{
+	if (NULL == dest)
 		return (0);
-	}
 	while (j < i)
 	{
 		dest[j] = min;
@@ -37,13 +33,12 @@ int	*ft_range(int min, int max)
 	}
 	return (dest);
 }
-/*
-int	main(void)
-{
-	int	*rg;
 
-	rg = ft_range(1, 9);
-	ft_putintptr(rg);
-	return (0);
-}
-*/
+// int	main(void)
+// {
+// 	int	*rg;
+
+// 	rg = ft_range(1, 9);
+// 	ft_putintptr(rg);
+// 	return (0);
+// }
