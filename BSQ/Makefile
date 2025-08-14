@@ -6,7 +6,7 @@
 #    By: mikhaing <0x@bontal.net>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/12 00:34:10 by mikhaing          #+#    #+#              #
-#    Updated: 2025/08/12 00:49:36 by mikhaing         ###   ########.fr        #
+#    Updated: 2025/08/13 14:08:25 by yiyuli         ###      ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ NAME = bsq
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I include 
-SRCS =	main.c \
+SRCS =	src/main.c \
+		src/read_grid.c \
+		src/map_handler.c \
+		src/solver.c \
+		src/drawing.c \
+		src/memory.c \
 		utils/ft_atoi.c \
 		utils/ft_isnumeric.c \
 		utils/ft_isprint.c \
@@ -30,6 +35,7 @@ SRCS =	main.c \
 		utils/ft_strloc.c \
 		utils/ft_strlcpy.c \
 		utils/ft_substr.c \
+		utils/gnl_node.c \
 		utils/gnl.c
 
 OBJS = $(SRCS:.c=.o)
